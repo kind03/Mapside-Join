@@ -13,9 +13,9 @@ public class MultipleReducer extends Reducer<Text,Text,Text,Text>
 		for(Text value:values)
 		{
 			if (value.toSring().substring(0,1).equals("1")) {
-				String tb1 = value.toString();
+				String tb1 = value.toString().substring(1);
 			} else if (value.toSring().substring(0,1).equals("2")) {
-				String tb2 = value.toString();
+				String tb2 = value.toString().substring(1);
 			}
 		}
 		valEmit.set(tb1+","+tb2);
