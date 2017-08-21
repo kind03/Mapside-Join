@@ -11,6 +11,9 @@ import org.apache.hadoop.util.GenericOptionsParser;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
+
+//test
+
 public class MultipleFiles extends Configured implements Tool{
 
 	public static void main(String[] args) throws Exception
