@@ -10,19 +10,15 @@ public class MultipleReducer extends Reducer<Text,Text,Text,Text>
 	public void reduce(Text key, Iterable<Text> values, Context context)
 			throws IOException , InterruptedException
 			{
-		int i =0;
 		for(Text value:values)
 		{
-			if(i == 0){
-				merge = value.toString()+",";
+			if (value.toSring().substring(0,1).equals("1")) {
+				String tb1 = value.toString();
+			} else if (value.toSring().substring(0,1).equals("2")) {
+				String tb2 = value.toString();
 			}
-			else{
-				merge += value.toString();
-			}
-
-			i++;
 		}
-		valEmit.set(merge);
+		valEmit.set(tb1+","+tb2);
 		context.write(key, valEmit);
-			}
+	}
 }

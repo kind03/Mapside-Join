@@ -12,7 +12,7 @@ public  class MultipleMap2 extends Mapper<LongWritable,Text,Text,Text>
 		String line=v.toString();
 		String[] words=line.split(" ");
 		keyEmit.set(words[0]);
-		valEmit.set(words[1]);
+		valEmit.set("2"+words[1]);
 		context.write(keyEmit, valEmit);
 	}
 }
